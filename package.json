@@ -1,7 +1,7 @@
 {
 	"name": "cogear-plugin-youtube",
 	"description": "Transform links to youtube-embed player.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Dmitriy Beliaev<admin@cogear.org>",
 	"repository": "https://github.com/codemotion/cogear-plugin-youtube",
 	"homepage": "https://github.com/codemotion/cogear-plugin-youtube",
