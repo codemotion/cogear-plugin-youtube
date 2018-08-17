@@ -3,10 +3,11 @@ let plugin = require('../plugin');
 
 describe('cogear-plugin-youtube',()=>{
 	beforeEach(()=>{
-		this.page = {
+		this.parser = {
+			file: "index.md",
 			content: `!https://www.youtube.com/watch?v=cFh-cQelKPU`
 		}
-		let page = this.page
+		let parser = this.parser
 		this.cogear = {
 			config: {
 				youtube: {
@@ -15,19 +16,19 @@ describe('cogear-plugin-youtube',()=>{
 				}
 			},
 			hooks: {
-				afterParse: {
+				beforeParse: {
 					tap(name,callback){
-						callback('Parser','index.md',page)
+						callback(parser)
 					}
 				}
 			}
 	}})
 	test("it must parse youtube link",()=>{
 		plugin.apply(this.cogear)		
-		expect(this.page.content).toContain('iframe')
+		expect(this.parser.content).toContain('iframe')
 	})
 	test("it must apply config-defined width and height",()=>{
 		plugin.apply(this.cogear)
-		expect(this.page.content).toContain('width="640"')
+		expect(this.parser.content).toContain('width="640"')
 	})
 })
