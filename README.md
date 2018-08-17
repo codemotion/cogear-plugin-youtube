@@ -2,7 +2,7 @@
 
 Transforms links like `!https://www.youtube.com/watch?v=xxxxxxxxxx` to embed video players (iframe).
 
-> Pay attention that `!` prefix before link scheme is necessary.
+> Pay attention that `!` prefix before link scheme is required.
 
 # Requirements
 
@@ -26,6 +26,16 @@ Embed width and height can be defined in site config `./config.yaml`:
 youtube:
 	width: 640
 	height: 320
+```
+
+Use `fitvids` VanillaJS npm package to fit video into context.
+
+Look at example `app.js`:
+```javascript
+import fitVids from 'fitvids'
+document.addEventListener('DOMContentLoaded',()=>{
+	fitVids()
+})
 ```
 
 # Docs
