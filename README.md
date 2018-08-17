@@ -6,7 +6,7 @@ Transforms links like `!https://www.youtube.com/watch?v=xxxxxxxxxx` to embed vid
 
 # Requirements
 
-Works with **Cogear.JS** v1.0.12 or higher.
+Works with **Cogear.JS** v1.0.13 or higher.
 
 # Installation
 
