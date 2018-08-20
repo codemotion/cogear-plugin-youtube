@@ -1,5 +1,5 @@
 module.exports = {
-		apply(cogear){
+		apply(){
 			// Process hooks here
 			cogear.hooks.beforeParse.tap('youtube',(parser)=>{
 				cogear.config.youtube = cogear.config.youtube || {}

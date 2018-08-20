@@ -8,7 +8,7 @@ describe('cogear-plugin-youtube',()=>{
 			content: `!https://www.youtube.com/watch?v=cFh-cQelKPU`
 		}
 		let parser = this.parser
-		this.cogear = {
+		global.cogear = {
 			config: {
 				youtube: {
 					width: 640,
@@ -24,11 +24,11 @@ describe('cogear-plugin-youtube',()=>{
 			}
 	}})
 	test("it must parse youtube link",()=>{
-		plugin.apply(this.cogear)		
+		plugin.apply()		
 		expect(this.parser.content).toContain('iframe')
 	})
 	test("it must apply config-defined width and height",()=>{
-		plugin.apply(this.cogear)
+		plugin.apply()
 		expect(this.parser.content).toContain('width="640"')
 	})
 })
