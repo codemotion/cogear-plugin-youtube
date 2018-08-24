@@ -24,8 +24,8 @@ Plugin will loads up automatically.
 Embed width and height can be defined in site config `./config.yaml`:
 ```yaml
 youtube:
-	width: 640
-	height: 320
+ width: 640
+ height: 320
 ```
 
 Use `fitvids` VanillaJS npm package to fit video into context.
