@@ -1,4 +1,4 @@
-# Cogear.JS plugin `YouTube` 📺
+#  📺`YouTube` plugin for Cogear.JS 
 
 Transforms links like `!https://www.youtube.com/watch?v=xxxxxxxxxx` to embed video players (iframe).
 
