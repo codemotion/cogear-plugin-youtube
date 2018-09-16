@@ -21,22 +21,21 @@ Plugin will loads up automatically.
 
 # Usage
 
-Embed width and height can be defined in site config `./config.yaml`:
-```yaml
+To avoid YouTube embed loads on startup plugin render only thumb with icon.
+
+On click it's been replaced with embed.
+
+Plugin script and styles automatically injected in all entries.
+
+To override it set in `./config.yaml`:
+``` yaml
 youtube:
- width: 640
- height: 320
+  inject: false
 ```
 
-Use `fitvids` VanillaJS npm package to fit video into context.
+And then you can process it manually as you want.
 
-Look at example `app.js`:
-```javascript
-import fitVids from 'fitvids'
-document.addEventListener('DOMContentLoaded',()=>{
-	fitVids()
-})
-```
+See `./youtube.js` entry point to understand how.
 
 # Docs
 
