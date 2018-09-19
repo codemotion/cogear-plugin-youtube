@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       options += '&autoplay=1&start=0';
       wrapper.innerHTML = '<div class="loader"><div></div><div></div><div></div><div></div></div>';
       let player = document.createElement('div');
-      player.innerHTML = `<iframe src="https://www.youtube.com/embed/${src}${options}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      player.innerHTML = `<iframe src="https://www.youtube.com/embed/${src}${options}&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
       el.appendChild(player);
     });
   });
