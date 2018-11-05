@@ -1,16 +1,17 @@
 const path = require('path');
 module.exports = {
   apply(){
-    cogear.on('preload.page.chunks',page=>{
+    cogear.on('webpack.config',webpackConfig=>{
       if(!cogear.config.youtube || false !== cogear.config.youtube.inject){
-        page.js = page.js || ['app'];
-        page.js.push(path.join(__dirname,'youtube'));
+        // page.js = page.js || ['app'];
+        webpackConfig.entry['app'].push(path.join(__dirname,'youtube'));
+        // page.js.push(path.join(__dirname,'youtube'));
       }
     });
     // Process hooks here
     cogear.on('parse.before',(parser)=>{
       const config = Object.assign({
-        thumbsize: 'maxresdefault'
+        thumbsize: 'hqdefault'
       },cogear.config.youtube || {});  
       
       // If it's not a layout, but a page
@@ -25,7 +26,7 @@ module.exports = {
               params[result.shift()] = result.pop();
             });
           }
-          let url = `//img.youtube.com/vi/${code}`; 
+          let url = `//img.youtube.com/vi/${code}/${config.thumbsize}.jpg`; 
           let width = params.w || config.width;
           if(width){
             url = `//images.weserv.nl/?url=img.youtube.com/vi/${code}/${config.thumbsize}.jpg&w=${width}`;
